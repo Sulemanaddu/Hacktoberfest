@@ -1,8 +1,14 @@
+
 # FirstPatch - AI-Powered Open Source Contribution Platform
 
-![GitHub repo size](https://img.shields.io/github/repo-size/Sulemanaddu/Hacktoberfest) ![GitHub issues](https://img.shields.io/github/issues/Sulemanaddu/Hacktoberfest) ![GitHub stars](https://img.shields.io/github/stars/Sulemanaddu/Hacktoberfest) ![License](https://img.shields.io/github/license/Sulemanaddu/Hacktoberfest)  
+![GitHub repo size](https://img.shields.io/github/repo-size/Sulemanaddu/Hacktoberfest) 
+![GitHub issues](https://img.shields.io/github/issues/Sulemanaddu/Hacktoberfest) 
+![GitHub stars](https://img.shields.io/github/stars/Sulemanaddu/Hacktoberfest) 
+![License](https://img.shields.io/github/license/Sulemanaddu/Hacktoberfest)
 
-✨ **FirstPatch** is an AI-powered platform designed to help beginners find and contribute to open-source projects. It analyzes GitHub repositories and suggests beginner-friendly contribution opportunities with detailed explanations and estimated time requirements.
+ **FirstPatch** is an AI-powered platform designed to help beginners find and contribute to open-source projects. It analyzes GitHub repositories and suggests beginner-friendly contribution opportunities with detailed explanations and estimated time requirements.
+
+🌐 **Live Demo:** [https://firstpatch.netlify.app/](https://firstpatch.netlify.app/)
 
 ---
 
@@ -20,9 +26,8 @@
 
 ---
 
-## 📝 Project Overview
-FirstPatch provides:
-
+## Project Overview
+FirstPatch provides:  
 - 🤖 **AI-powered repository analysis**  
 - 🧩 Beginner-friendly contribution suggestions  
 - 📖 Detailed explanations of tasks  
@@ -31,9 +36,8 @@ FirstPatch provides:
 
 ---
 
-## 🏗 Architecture
-Modern web architecture with:
-
+## Architecture
+Modern web architecture with:  
 - **Frontend:** React + TypeScript + Vite  
 - **Styling:** Tailwind CSS + shadcn/ui components  
 - **State Management:** TanStack Query  
@@ -43,7 +47,7 @@ Modern web architecture with:
 
 ---
 
-## 🛠 Technology Stack
+## Technology Stack
 
 ### Frontend
 - **React** ⚛️  
@@ -68,8 +72,7 @@ Modern web architecture with:
 
 ---
 
-## 📁 Project Structure
-
+## Project Structure
 ```bash
 first-path-ai/
 ├── .env
@@ -111,76 +114,67 @@ first-path-ai/
 │   └── functions/
 │       └── analyze-repo/
 │           └── index.ts
+````
+
+---
 
 ## Components
 
 ### Main Components
 
 #### `App.tsx`
-The main application component that sets up routing, state management, and global providers:
-- Wraps the application with QueryClientProvider for TanStack Query
-- Provides TooltipProvider for tooltips
-- Sets up routing with React Router DOM
-- Includes toast notification providers
 
-#### `Index.tsx` (src/pages/Index.tsx)
-The main page component with the following features:
-- Repository URL input field
-- Analysis button with loading state
-- Repository information display
-- Contribution suggestions with detailed cards
-- Difficulty and type badges
-- Estimated time indicators
-- Responsive design
+* Wraps the app with `QueryClientProvider` for TanStack Query
+* Provides `TooltipProvider` for tooltips
+* Sets up routing with React Router DOM
+* Includes toast notification providers
+
+#### `Index.tsx` (`src/pages/Index.tsx`)
+
+* Repository URL input field
+* Analysis button with loading state
+* Repository information display
+* Contribution suggestions with detailed cards
+* Difficulty and type badges
+* Estimated time indicators
+* Responsive design
 
 #### `ThreeBackground.tsx`
-An animated canvas background component that creates a particle system:
-- Creates moving particles that connect when close to each other
-- Responsive design that adapts to screen size
-- Smooth animation using requestAnimationFrame
-- Canvas-based rendering for performance
+
+* Animated particle system background
+* Responsive design
+* Smooth animation with `requestAnimationFrame`
+* Canvas-based rendering
 
 ### UI Components (shadcn/ui)
 
-The project uses shadcn/ui components which include:
-- Accordion, Alert, AlertDialog
-- AspectRatio, Avatar, Badge
-- Breadcrumb, Button, Calendar
-- Card, Carousel, Chart
-- Checkbox, Collapsible, Command
-- ContextMenu, Dialog, Drawer
-- DropdownMenu, Form
-- HoverCard, Input, InputOTP
-- Label, Menubar, NavigationMenu
-- Pagination, Popover, Progress
-- RadioGroup, Resizable, ScrollArea
-- Select, Separator, Sheet
-- Sidebar, Skeleton, Slider
-- Sonner, Switch, Table
-- Tabs, Textarea, Toast, Toaster
-- Toggle, ToggleGroup, Tooltip
-- UseToast hook
+Includes: Accordion, Alert, AlertDialog, AspectRatio, Avatar, Badge, Breadcrumb, Button, Calendar, Card, Carousel, Chart, Checkbox, Collapsible, Command, ContextMenu, Dialog, Drawer, DropdownMenu, Form, HoverCard, Input, InputOTP, Label, Menubar, NavigationMenu, Pagination, Popover, Progress, RadioGroup, Resizable, ScrollArea, Select, Separator, Sheet, Sidebar, Skeleton, Slider, Sonner, Switch, Table, Tabs, Textarea, Toast, Toaster, Toggle, ToggleGroup, Tooltip, `useToast` hook
+
+---
 
 ## API Functions
 
 ### Supabase Edge Function: `analyze-repo`
 
-Located at `supabase/functions/analyze-repo/index.ts`, this function performs the core functionality of the application:
+Located at `supabase/functions/analyze-repo/index.ts`
 
-#### Functionality:
-1. **Repository Validation**: Validates GitHub URL format
-2. **GitHub API Integration**: Fetches repository information, README, languages, issues, and structure
-3. **AI Analysis**: Sends repository context to Lovable AI for analysis
-4. **Response Generation**: Formats AI suggestions into structured data
+**Functionality:**
 
-#### Request Format:
+1. Validates GitHub URL format
+2. Fetches repository info, README, languages, issues, and structure
+3. Sends data to Lovable AI for analysis
+4. Returns structured contribution suggestions
+
+**Request Example:**
+
 ```json
 {
   "repoUrl": "https://github.com/username/repository"
 }
 ```
 
-#### Response Format:
+**Response Example:**
+
 ```json
 {
   "repository": {
@@ -204,110 +198,91 @@ Located at `supabase/functions/analyze-repo/index.ts`, this function performs th
 }
 ```
 
-#### AI Prompt Context:
-The function sends repository information to the AI including:
-- Repository name, description, and star count
-- Primary language and all languages used
-- README content (first 3000 characters)
-- Open issues count and sample issues
-- Project structure (top-level files and folders)
+**AI Prompt Context:**
+
+* Repository name, description, star count
+* Languages used
+* README content (first 3000 chars)
+* Open issues and sample issues
+* Top-level project structure
+
+---
 
 ## Setup Instructions
 
 ### Prerequisites
-- Node.js (version 18 or higher)
-- npm, yarn, or bun
-- GitHub account
-- Access to Supabase project
-- Access to Lovable AI service
 
-### Installation Steps
+* Node.js v18+
+* npm, yarn, or bun
+* GitHub account
+* Supabase project access
+* Lovable AI access
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd first-path-ai
-   ```
+### Installation
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   bun install
-   ```
+```bash
+git clone <repository-url>
+cd first-path-ai
 
-3. **Set up environment variables**
-   Copy `.env.example` to `.env` and fill in the required values (see Environment Variables section)
+# Install dependencies
+npm install   # or yarn install or bun install
 
-4. **Run the development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   bun dev
-   ```
+# Copy environment variables
+cp .env.example .env
 
-5. **Open the application**
-   Visit `http://localhost:5173` in your browser
+# Start development server
+npm run dev   # or yarn dev or bun dev
+```
 
-### Development Scripts
+Open in browser: [http://localhost:5173](http://localhost:5173)
 
-- `npm run dev`: Starts the development server
-- `npm run build`: Builds the production version
-- `npm run build:dev`: Builds the development version
-- `npm run lint`: Runs ESLint to check for code issues
-- `npm run preview`: Locally preview the production build
+### Scripts
+
+* `npm run dev` – start dev server
+* `npm run build` – build production version
+* `npm run build:dev` – build development version
+* `npm run lint` – check code with ESLint
+* `npm run preview` – preview production build locally
+
+---
 
 ## Environment Variables
 
-The application requires the following environment variables in a `.env` file:
+**Frontend**
 
-- `VITE_SUPABASE_URL`: The URL of your Supabase project
-- `VITE_SUPABASE_PUBLISHABLE_KEY`: The public API key for your Supabase project
+* `VITE_SUPABASE_URL`
+* `VITE_SUPABASE_PUBLISHABLE_KEY`
 
-The Supabase Edge Function requires:
-- `GITHUB_TOKEN`: GitHub personal access token for API requests
-- `GEMINI_API`: API key for the Gemini AI service
+**Supabase Edge Function**
+
+* `GITHUB_TOKEN`
+* `GEMINI_API`
+
+---
 
 ## How It Works
 
-1. **User Input**: User enters a GitHub repository URL in the input field
-2. **Validation**: The application validates the URL format
-3. **API Request**: The frontend sends the repository URL to the Supabase Edge Function
-4. **Repository Analysis**: The function fetches repository data from GitHub API
-5. **AI Processing**: The repository data is sent to the Lovable AI service
-6. **Suggestion Generation**: AI analyzes the repository and generates contribution suggestions
-7. **Response Formatting**: The suggestions are formatted into structured data
-8. **Display**: The frontend displays the repository information and contribution suggestions
+1. User enters GitHub repo URL
+2. App validates the URL
+3. Sends URL to Supabase Edge Function
+4. Function fetches repo data from GitHub API
+5. Sends data to Lovable AI
+6. AI generates contribution suggestions
+7. Suggestions are returned in structured format
+8. Frontend displays repository info and suggestions
 
-### Contribution Suggestion Categories
+**Categories:** Documentation, Code, Testing, UI, Config
+**Difficulty:** Easy, Medium
 
-The AI generates suggestions in the following categories:
-- **Documentation**: Improving README, code comments, or documentation
-- **Code**: Small code improvements, bug fixes, or refactoring
-- **Testing**: Adding or improving unit tests
-- **UI**: User interface improvements or accessibility enhancements
-- **Config**: Configuration file improvements
-
-### Difficulty Levels
-
-Suggestions are categorized by difficulty:
-- **Easy**: Tasks requiring minimal context and low risk of breaking functionality
-- **Medium**: Tasks requiring some context but still approachable for beginners
+---
 
 ## Deployment
 
-The application can be deployed to various platforms:
-
 ### Manual Deployment
-- Build the application using `npm run build`
-- Deploy the `dist` folder to your preferred hosting platform
-- Ensure environment variables are properly configured in the deployment environment
-- For Supabase Edge Functions, deploy using the Supabase CLI
 
-### Custom Domain
-- Custom domains can be connected through the Lovable platform
-- Navigate to Project > Settings > Domains and click Connect Domain
+* Build app: `npm run build`
+* Deploy `dist` folder to hosting platform
+* Configure environment variables
+* Deploy Supabase Edge Functions via CLI
+
+
