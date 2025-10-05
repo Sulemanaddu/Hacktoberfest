@@ -1,4 +1,4 @@
-# 🚀 FirstPatch - AI-Powered Open Source Contribution Platform
+# FirstPatch - AI-Powered Open Source Contribution Platform
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Sulemanaddu/Hacktoberfest) ![GitHub issues](https://img.shields.io/github/issues/Sulemanaddu/Hacktoberfest) ![GitHub stars](https://img.shields.io/github/stars/Sulemanaddu/Hacktoberfest) ![License](https://img.shields.io/github/license/Sulemanaddu/Hacktoberfest)  
 
@@ -6,7 +6,7 @@
 
 ---
 
-## 📌 Table of Contents
+## Table of Contents
 1. [Project Overview](#project-overview)
 2. [Architecture](#architecture)
 3. [Technology Stack](#technology-stack)
