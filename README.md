@@ -8,8 +8,8 @@
 
  **FirstPatch** is an AI-powered platform designed to help beginners find and contribute to open-source projects. It analyzes GitHub repositories and suggests beginner-friendly contribution opportunities with detailed explanations and estimated time requirements.
 
-🌐 **Live Demo:** [https://firstpatch.netlify.app/](https://firstpatch.netlify.app/)  
-📄 **Detailed Documentation:** [https://deepwiki.com/Sulemanaddu/Hacktoberfest](https://deepwiki.com/Sulemanaddu/Hacktoberfest)
+ **Live Demo:** [https://firstpatch.netlify.app/](https://firstpatch.netlify.app/)  
+ **Detailed Documentation:** [https://deepwiki.com/Sulemanaddu/Hacktoberfest](https://deepwiki.com/Sulemanaddu/Hacktoberfest)
 
 ---
 
@@ -29,11 +29,11 @@
 
 ## Project Overview
 FirstPatch provides:  
-- 🤖 **AI-powered repository analysis**  
-- 🧩 Beginner-friendly contribution suggestions  
-- 📖 Detailed explanations of tasks  
-- ⏱ Estimated time requirements  
-- 🌟 Difficulty ratings for tasks  
+-  **AI-powered repository analysis**  
+-  Beginner-friendly contribution suggestions  
+-  Detailed explanations of tasks  
+-  Estimated time requirements  
+-  Difficulty ratings for tasks  
 
 ---
 
@@ -51,19 +51,19 @@ Modern web architecture with:
 ## Technology Stack
 
 ### Frontend
-- **React** ⚛️  
-- **TypeScript** 🟦  
-- **Vite** ⚡  
-- **Tailwind CSS** 🌬  
-- **shadcn/ui** 🧩  
-- **Lucide React** 🎨  
-- **TanStack Query** 📡  
-- **React Router DOM** 🛣  
+- **React**  
+- **TypeScript**   
+- **Vite**   
+- **Tailwind CSS**   
+- **shadcn/ui**   
+- **Lucide React**   
+- **TanStack Query**   
+- **React Router DOM**   
 
 ### Backend & Services
-- **Supabase** 🏢  
-- **GitHub API** 🐱  
-- **Lovable AI (Gemini)** 🤖  
+- **Supabase**   
+- **GitHub API**   
+- **Lovable AI (Gemini)**   
 
 ### Dev Tools
 - **ESLint**  
