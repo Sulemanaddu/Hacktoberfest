@@ -9,7 +9,7 @@
  **FirstPatch** is an AI-powered platform designed to help beginners find and contribute to open-source projects. It analyzes GitHub repositories and suggests beginner-friendly contribution opportunities with detailed explanations and estimated time requirements.
 
 🌐 **Live Demo:** [https://firstpatch.netlify.app/](https://firstpatch.netlify.app/)  
-📄 **Documentation:** [https://deepwiki.com/Sulemanaddu/Hacktoberfest](https://deepwiki.com/Sulemanaddu/Hacktoberfest)
+📄 **Detailed Documentation:** [https://deepwiki.com/Sulemanaddu/Hacktoberfest](https://deepwiki.com/Sulemanaddu/Hacktoberfest)
 
 ---
 
