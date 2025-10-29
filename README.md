@@ -43,7 +43,7 @@ Modern web architecture with:
 - **Styling:** Tailwind CSS + shadcn/ui components  
 - **State Management:** TanStack Query  
 - **Backend:** Supabase Edge Functions  
-- **AI Integration:** Lovable AI (Gemini)  
+- **AI Integration:** Gemini AI  
 - **GitHub API:** Fetch repository info  
 
 ---
@@ -63,7 +63,7 @@ Modern web architecture with:
 ### Backend & Services
 - **Supabase**   
 - **GitHub API**   
-- **Lovable AI (Gemini)**   
+- **Gemini AI**   
 
 ### Dev Tools
 - **ESLint**  
@@ -75,21 +75,18 @@ Modern web architecture with:
 
 ## Project Structure
 ```bash
-first-path-ai/
-├── .env
-├── .gitignore
-├── bun.lockb
-├── components.json
-├── eslint.config.js
-├── index.html
-├── package.json
-├── postcss.config.js
-├── README.md
-├── tailwind.config.ts
-├── tsconfig.app.json
-├── tsconfig.json
-├── tsconfig.node.json
-├── vite.config.ts
+FirstPatch/
+├── backend/
+│   ├── analyzers/
+│   │   ├── docs_detector.py
+│   │   ├── size_detector.py
+│   │   ├── test_detector.py
+│   │   └── todo_detector.py
+│   ├── app.py
+│   ├── github_client.py
+│   ├── requirements.txt
+│   ├── store.py
+│   └── worker.py
 ├── public/
 │   ├── favicon.ico
 │   ├── placeholder.svg
@@ -101,20 +98,40 @@ first-path-ai/
 │   ├── main.tsx
 │   ├── vite-env.d.ts
 │   ├── components/
+│   │   ├── ui/
 │   │   └── ThreeBackground.tsx
-│   ├── components/ui/
 │   ├── hooks/
+│   │   ├── use-mobile.tsx
+│   │   └── use-toast.ts
 │   ├── integrations/
 │   │   └── supabase/
+│   │       ├── client.ts
+│   │       └── types.ts
 │   ├── lib/
-│   ├── pages/
-│   │   ├── Index.tsx
-│   │   └── NotFound.tsx
+│   │   └── utils.ts
+│   └── pages/
+│       ├── Index.tsx
+│       └── NotFound.tsx
 ├── supabase/
 │   ├── config.toml
 │   └── functions/
 │       └── analyze-repo/
 │           └── index.ts
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── README.md
+├── bun.lockb
+├── components.json
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── tailwind.config.ts
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
 ````
 
 ---
@@ -163,7 +180,7 @@ Located at `supabase/functions/analyze-repo/index.ts`
 
 1. Validates GitHub URL format
 2. Fetches repository info, README, languages, issues, and structure
-3. Sends data to Lovable AI for analysis
+3. Sends data to Gemini AI for analysis
 4. Returns structured contribution suggestions
 
 **Request Example:**
@@ -217,13 +234,13 @@ Located at `supabase/functions/analyze-repo/index.ts`
 * npm, yarn, or bun
 * GitHub account
 * Supabase project access
-* Lovable AI access
+* Gemini API key
 
 ### Installation
 
 ```bash
 git clone <repository-url>
-cd first-path-ai
+cd Hacktoberfest
 
 # Install dependencies
 npm install   # or yarn install or bun install
@@ -267,7 +284,7 @@ Open in browser: [http://localhost:5173](http://localhost:5173)
 2. App validates the URL
 3. Sends URL to Supabase Edge Function
 4. Function fetches repo data from GitHub API
-5. Sends data to Lovable AI
+5. Sends data to Gemini AI
 6. AI generates contribution suggestions
 7. Suggestions are returned in structured format
 8. Frontend displays repository info and suggestions
