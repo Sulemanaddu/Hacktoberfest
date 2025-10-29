@@ -48,6 +48,11 @@ const Index = () => {
     setResult(null);
 
     try {
+      // Check if environment variables are configured
+      if (!import.meta.env.VITE_SUPABASE_URL) {
+        throw new Error('Supabase URL is not configured. Please set up your .env file with VITE_SUPABASE_URL');
+      }
+
       const response = await fetch(
         `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/analyze-repo`,
         {
@@ -60,11 +65,23 @@ const Index = () => {
       );
 
       if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.error || 'Failed to analyze repository');
+        let errorMessage = 'Failed to analyze repository';
+        try {
+          const error = await response.json();
+          errorMessage = error.error || errorMessage;
+        } catch {
+          errorMessage = `Server returned ${response.status}: ${response.statusText}`;
+        }
+        throw new Error(errorMessage);
       }
 
-      const data = await response.json();
+      let data;
+      try {
+        data = await response.json();
+      } catch (jsonError) {
+        throw new Error('Invalid response from server. Please check your Supabase configuration.');
+      }
+
       setResult(data);
 
       toast({
